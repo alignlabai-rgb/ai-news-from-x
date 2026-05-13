@@ -3,318 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X AIニュース | AI News from X</title>
+    <title>Tech News Hub | Xから集めた技術ニュース</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap');
-        body { font-family: 'Inter', 'Noto Sans JP', system_ui, sans-serif; }
-        .news-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .news-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
-        .ai-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
-        .section-header { position: relative; }
-        .section-header:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: linear-gradient(to right, #3b82f6, #8b5cf6); border-radius: 3px; }
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .category-card { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .category-card:hover { transform: translateY(-4px); }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
     <!-- Navbar -->
-    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav class="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-x-3">
-                <div class="w-10 h-10 ai-gradient rounded-2xl flex items-center justify-center">
-                    <i class="fa-brands fa-x-twitter text-white text-2xl"></i>
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-newspaper text-white"></i>
                 </div>
-                <div>
-                    <span class="font-bold text-2xl tracking-tight">X AIニュース</span>
-                    <span class="text-xs text-zinc-500 block -mt-1">from X</span>
-                </div>
+                <span class="font-bold text-2xl tracking-tight">Tech News Hub</span>
             </div>
-            <div class="flex items-center gap-x-4">
-                <div class="px-3 py-1.5 bg-zinc-900 rounded-full text-sm flex items-center gap-x-2 border border-zinc-800">
-                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-medium">LIVE • 2026年5月13日</span>
-                </div>
-                <a href="https://github.com/alignlabai-rgb/ai-news-from-x" target="_blank" 
-                   class="flex items-center gap-x-2 px-4 py-2 text-sm font-medium hover:bg-zinc-900 transition-colors rounded-2xl border border-zinc-800">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-            </div>
+            <div class="text-sm text-zinc-400">Xから集めた技術ニュースの整理庫</div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <div class="max-w-7xl mx-auto px-6 pt-12 pb-8">
-        <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-3xl bg-zinc-900 border border-zinc-800 text-sm mb-6">
-                <i class="fa-solid fa-robot text-blue-400"></i>
-                <span class="font-medium">AI Daily Digest</span>
+    <div class="max-w-6xl mx-auto px-6 pt-10 pb-16">
+        <!-- Hero -->
+        <div class="mb-12">
+            <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-3xl bg-zinc-900 text-sm mb-4 border border-zinc-800">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span>定期更新中</span>
             </div>
-            
-            <h1 class="text-6xl font-bold tracking-tighter mb-4">Xから集めた<br>最新AIニュース</h1>
-            <p class="text-xl text-zinc-400 max-w-md">今日のX（旧Twitter）で話題のAI関連投稿を厳選してまとめました。<br>新しいモデル、ツール、市場動向などをピックアップ。</p>
-            
-            <div class="flex items-center gap-x-3 mt-8">
-                <button onclick="window.location.reload()" 
-                        class="px-6 py-3 bg-white text-zinc-950 font-semibold rounded-3xl flex items-center gap-x-2 hover:bg-zinc-100 transition-all active:scale-[0.985]">
-                    <i class="fa-solid fa-sync-alt"></i>
-                    <span>最新情報を確認</span>
-                </button>
-                <a href="#posts" class="px-6 py-3 border border-zinc-700 hover:bg-zinc-900 transition-colors rounded-3xl font-medium flex items-center gap-x-2">
-                    投稿を見る <i class="fa-solid fa-arrow-down ml-1"></i>
+            <h1 class="text-6xl font-bold tracking-tighter">X Tech News</h1>
+            <p class="mt-3 text-xl text-zinc-400 max-w-lg">Xの投稿から集めた技術ニュースをカテゴリ別に整理しています。<br>AI、量子コンピューティング、先端技術を中心に。</p>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-semibold">カテゴリ</h2>
+                <span class="text-sm text-zinc-500">クリックで詳細へ</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- AI Category -->
+                <a href="categories/ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-blue-500/50 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-xl group-hover:text-blue-400 transition-colors">AI</div>
+                            <div class="text-sm text-zinc-400">Western / Global AI</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm text-zinc-400">OpenAI, Anthropic, Google, xAI, Metaなどの最新動向</div>
                 </a>
+
+                <!-- Chinese AI -->
+                <a href="categories/chinese-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-red-500/50 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-xl group-hover:text-red-400 transition-colors">Chinese AI</div>
+                            <div class="text-sm text-zinc-400">中国系AI</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm text-zinc-400">DeepSeek, Qwen, Alibaba, Moonshotなどの中国AI動向</div>
+                </a>
+
+                <!-- Placeholder for future categories -->
+                <div class="category-card block bg-zinc-900/50 border border-zinc-800 rounded-3xl p-6 opacity-60">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-xl">Quantum Computing</div>
+                            <div class="text-sm text-zinc-400">Coming soon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card block bg-zinc-900/50 border border-zinc-800 rounded-3xl p-6 opacity-60">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-xl">Longevity / Anti-aging</div>
+                            <div class="text-sm text-zinc-400">Coming soon</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="mt-6 text-xs text-zinc-500 flex items-center gap-x-4">
-                <div>データソース: X API</div>
-                <div>更新: 2026年5月13日 22:30 JST</div>
+        </div>
+
+        <!-- Latest Digests -->
+        <div>
+            <h2 class="text-2xl font-semibold mb-6">最新のダイジェスト</h2>
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="font-medium">2026-05-14 — AI News</div>
+                        <div class="text-sm text-zinc-400">Western / Global AI</div>
+                    </div>
+                    <a href="categories/ai/digests/2026-05-14.html" 
+                       class="px-5 py-2.5 text-sm font-medium bg-white text-zinc-950 rounded-2xl hover:bg-zinc-100 transition-colors">
+                        読む
+                    </a>
+                </div>
             </div>
+        </div>
+
+        <div class="mt-16 text-center text-xs text-zinc-500">
+            このサイトはXの公開投稿を基にGrokが定期的に更新しています。<br>
+            新しいカテゴリやニュースの追加依頼はいつでもどうぞ。
         </div>
     </div>
-
-    <!-- Stats Bar -->
-    <div class="max-w-7xl mx-auto px-6 pb-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5">
-                <div class="text-emerald-400 text-sm font-medium">TRENDING</div>
-                <div class="text-3xl font-semibold mt-1">AutoScientist</div>
-                <div class="text-xs text-zinc-500 mt-1">研究自動化ツールが話題</div>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5">
-                <div class="text-amber-400 text-sm font-medium">MARKET</div>
-                <div class="text-3xl font-semibold mt-1">AI株堅調</div>
-                <div class="text-xs text-zinc-500 mt-1">インフレ懸念もAI需要で支え</div>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5">
-                <div class="text-purple-400 text-sm font-medium">EDUCATION</div>
-                <div class="text-3xl font-semibold mt-1">Stanford LLM講座</div>
-                <div class="text-xs text-zinc-500 mt-1">無料公開で話題</div>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5">
-                <div class="text-sky-400 text-sm font-medium">SELECTED</div>
-                <div class="text-3xl font-semibold mt-1">6 投稿</div>
-                <div class="text-xs text-zinc-500 mt-1">本日ピックアップ</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Posts Section -->
-    <div id="posts" class="max-w-7xl mx-auto px-6 pb-16">
-        <div class="flex items-end justify-between mb-8">
-            <div>
-                <h2 class="text-3xl font-bold tracking-tight section-header">今日のピックアップ投稿</h2>
-                <p class="text-zinc-400 mt-1">Xで注目を集めたAI関連の投稿をまとめています</p>
-            </div>
-            <a href="https://x.com/explore" target="_blank" class="text-sm flex items-center gap-x-1.5 text-zinc-400 hover:text-white transition-colors">
-                Xでさらに見る <i class="fa-solid fa-external-link-alt text-xs"></i>
-            </a>
-        </div>
-
-        <!-- News Cards Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            
-            <!-- Card 1: AutoScientist -->
-            <div class="news-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl flex-shrink-0"></div>
-                        <div>
-                            <div class="font-semibold">adaption_ai</div>
-                            <div class="text-xs text-zinc-500">@adaption_ai • 研究自動化</div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-emerald-400 text-xs font-mono">NEW</div>
-                        <div class="text-[10px] text-zinc-500">May 13</div>
-                    </div>
-                </div>
-                
-                <h3 class="font-semibold text-xl leading-tight mb-3">AutoScientist 発表 — 研究ループを完全自動化</h3>
-                
-                <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                    フロンティアラボ以外でのモデル訓練が失敗しやすい問題を解決するため、AutoScientistが研究の全ループを自動化。
-                    Sara Hooker氏も「これがゲームチェンジャーになる」と高評価。
-                </p>
-                
-                <div class="flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-x-4 text-zinc-400">
-                        <div><i class="fa-solid fa-heart mr-1 text-red-400"></i> 132</div>
-                        <div><i class="fa-solid fa-retweet mr-1"></i> 23</div>
-                    </div>
-                    <a href="https://x.com/adaption_ai/status/2054532113316434061" target="_blank"
-                       class="inline-flex items-center gap-x-1.5 text-blue-400 hover:text-blue-300 font-medium text-xs">
-                        Xで詳細を見る <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 2: Market & AI -->
-            <div class="news-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <i class="fa-solid fa-chart-line text-white"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold">市場動向</div>
-                            <div class="text-xs text-zinc-500">@keith_market • 株式</div>
-                        </div>
-                    </div>
-                    <div class="text-right text-xs text-zinc-500">May 13</div>
-                </div>
-                
-                <h3 class="font-semibold text-xl leading-tight mb-3">AI好調もPPI上昇で警戒 — 半導体株は堅調</h3>
-                
-                <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                    4月PPIが予想を上回りインフレ懸念が高まる中、AI需要の爆発的増加を背景にNBIS +15%、TSEM +18%などAIインフラ関連株が堅調。
-                    BofAが2030年AIデータセンターTAMを1.7兆ドルに上方修正。
-                </p>
-                
-                <div class="flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-x-4 text-zinc-400">
-                        <div><i class="fa-solid fa-heart mr-1 text-red-400"></i> 73+</div>
-                        <div><i class="fa-solid fa-chart-bar mr-1"></i> 市場分析</div>
-                    </div>
-                    <a href="https://x.com/keith_market/status/2054549975011672571" target="_blank"
-                       class="inline-flex items-center gap-x-1.5 text-blue-400 hover:text-blue-300 font-medium text-xs">
-                        Xで詳細を見る <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 3: Stanford Lecture -->
-            <div class="news-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-gradient-to-br from-purple-500 to-fuchsia-500 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <i class="fa-solid fa-graduation-cap text-white"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold">教育・学習</div>
-                            <div class="text-xs text-zinc-500">@riyazz_ai • Stanford</div>
-                        </div>
-                    </div>
-                    <div class="text-right text-xs text-zinc-500">May 13</div>
-                </div>
-                
-                <h3 class="font-semibold text-xl leading-tight mb-3">StanfordのLLMアーキテクチャ講座が無料公開</h3>
-                
-                <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                    ChatGPTやClaudeのようなLLMが実際にどのように構築されているかを学べる1時間のStanford講義動画が無料公開。
-                    「ほとんどのエンジニアがAI企業で数年かけて学ぶ内容より深い」と話題に。
-                </p>
-                
-                <div class="flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-x-4 text-zinc-400">
-                        <div><i class="fa-solid fa-heart mr-1 text-red-400"></i> 33+</div>
-                        <div><i class="fa-solid fa-play mr-1"></i> 動画講座</div>
-                    </div>
-                    <a href="https://x.com/riyazz_ai/status/2054541409433383107" target="_blank"
-                       class="inline-flex items-center gap-x-1.5 text-blue-400 hover:text-blue-300 font-medium text-xs">
-                        Xで詳細を見る <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 4: AI Ethics / Historical Photo -->
-            <div class="news-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex-shrink-0"></div>
-                        <div>
-                            <div class="font-semibold">AIの倫理的利用</div>
-                            <div class="text-xs text-zinc-500">@Kojimamo • 鉄道写真</div>
-                        </div>
-                    </div>
-                    <div class="text-right text-xs text-zinc-500">May 13</div>
-                </div>
-                
-                <h3 class="font-semibold text-xl leading-tight mb-3">生成AIで古い鉄道写真をカラー化 — 著作権・倫理の議論</h3>
-                
-                <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                    1969年の国鉄181系特急の写真を生成AIでカラー化して出版した事例に対し、「撮影者が物故した写真を勝手にAIカラー化して出版するのはありなのか」との声が上がる。
-                    AI生成コンテンツの二次利用に関する議論が活発に。
-                </p>
-                
-                <div class="flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-x-4 text-zinc-400">
-                        <div><i class="fa-solid fa-heart mr-1 text-red-400"></i> 5+</div>
-                        <div><i class="fa-solid fa-comments mr-1"></i> 議論中</div>
-                    </div>
-                    <a href="https://x.com/Kojimamo/status/2054551505215410312" target="_blank"
-                       class="inline-flex items-center gap-x-1.5 text-blue-400 hover:text-blue-300 font-medium text-xs">
-                        Xで詳細を見る <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 5: Additional market insight -->
-            <div class="news-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7 lg:col-span-2">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-gradient-to-br from-red-500 to-rose-500 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <i class="fa-solid fa-globe text-white"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold">グローバル市場インサイト</div>
-                            <div class="text-xs text-zinc-500">@jasmine17361736 • 米国株まとめ</div>
-                        </div>
-                    </div>
-                    <div class="text-right text-xs text-zinc-500">May 13</div>
-                </div>
-                
-                <div class="grid md:grid-cols-5 gap-6">
-                    <div class="md:col-span-3">
-                        <h3 class="font-semibold text-xl leading-tight mb-3">CPI・PPI上昇でも「AIがヘッジ先」になる不思議な相場</h3>
-                        <p class="text-zinc-400 text-[15px]">
-                            インフレ指標の上振れで金利上昇圧力がかかる中、半導体・AI関連株だけが相対的に堅調を維持。
-                            「ヘッジ先が半導体・AI」という新しい市場構造が注目されている。
-                        </p>
-                    </div>
-                    <div class="md:col-span-2 bg-zinc-950 border border-zinc-800 rounded-2xl p-4 text-sm">
-                        <div class="text-xs uppercase tracking-widest text-zinc-500 mb-2">Key Takeaway</div>
-                        <ul class="space-y-1.5 text-zinc-300">
-                            <li class="flex gap-x-2"><span class="text-emerald-400">•</span> AI需要が構造的な強気材料に</li>
-                            <li class="flex gap-x-2"><span class="text-emerald-400">•</span> 短期的な金利変動に強い耐性</li>
-                            <li class="flex gap-x-2"><span class="text-emerald-400">•</span> データセンター投資継続の兆し</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mt-5 flex justify-end">
-                    <a href="https://x.com/jasmine17361736/status/2054548965425889350" target="_blank"
-                       class="inline-flex items-center gap-x-1.5 text-blue-400 hover:text-blue-300 font-medium text-xs">
-                        元投稿を見る on X <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="border-t border-zinc-800 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6 py-10 text-sm">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-4">
-                <div class="text-zinc-500">
-                    このページはGrokによって自動生成・GitHubにアップロードされました。<br>
-                    Xの公開投稿を基にした非公式のダイジェストです。最新情報はXでご確認ください。
-                </div>
-                <div class="flex items-center gap-x-5 text-xs">
-                    <a href="https://github.com/alignlabai-rgb/ai-news-from-x" class="hover:text-white transition-colors">リポジトリを見る</a>
-                    <span class="text-zinc-700">•</span>
-                    <span>Made with ❤️ by Grok</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Tailwind script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent', '#3b82f6');
-        }
-        window.onload = initializeTailwind;
-    </script>
 </body>
 </html>
