@@ -1,55 +1,50 @@
-# Tech News Hub - Category Guide
+# Tech News Hub - Category Guide (Final)
 
 ## Overview
-This repository organizes tech news from X into 6 numbered categories.
+Xから集めた技術ニュースを**番号付き6カテゴリ**で管理しています。
 
-**Live Site (GitHub Pages)**: https://alignlabai-rgb.github.io/ai-news-from-x/
+**Live Site**: https://alignlabai-rgb.github.io/ai-news-from-x/
+
+目標：**毎日更新しやすいボリューム**を確保するため、各カテゴリの範囲を適切に広げています。
 
 ## Numbered Categories (01-06)
 
-| No. | Category                    | Folder Name                  | Scope                                              | Update Frequency      |
-|-----|-----------------------------|------------------------------|----------------------------------------------------|-----------------------|
-| 01  | AI                          | `01-ai`                      | General AI models, tools, applications             | Daily                 |
-| 02  | Chinese AI & Tech           | `02-chinese-ai`              | Chinese AI and related technologies                | Daily or every other day |
-| 03  | AI Agents                   | `03-ai-agents`               | Autonomous agents and automation                   | Daily or every other day |
-| 04  | Hardware & Physical Tech    | `04-hardware-physical-tech`  | Semiconductors, IOWN, photonics, new memory, physical innovations | Weekly or on major news |
-| 05  | Longevity & Biotech         | `05-longevity`               | Anti-aging, longevity, biotech                     | 2-3 times per week    |
-| 06  | Generative AI & Creative Tools | `06-generative-ai`        | Image/video generation, manga/short video tools, IP creation support | Daily or every other day |
+| No. | Category Name                          | Folder                        | Scope                                                                 | Update Frequency          |
+|-----|----------------------------------------|-------------------------------|-----------------------------------------------------------------------|---------------------------|
+| 01  | AI                                     | `01-ai`                       | AIモデル・ツール・応用・ブレークスルー全般                           | 毎日                      |
+| 02  | Chinese AI & Tech                      | `02-chinese-ai`               | 中国発のAIと関連ハードウェア・技術                                    | 毎日 or 隔日              |
+| 03  | AI Agents                              | `03-ai-agents`                | 自律型エージェント・マルチエージェント・自動化システム                | 毎日 or 隔日              |
+| 04  | Hardware & Physical Tech               | `04-hardware-physical-tech`   | 半導体、新デバイス、IOWN、フォトニクス、新メモリ、エネルギー技術（先進核融合含む）など物理層の新技術 | 毎日〜週2回程度           |
+| 05  | Longevity, Biotech & Molecular Biology | `05-longevity`                | アンチエイジング・長寿研究＋分子生物学・バイオテクノロジーの大きな発見 | 週2〜3回                  |
+| 06  | Generative AI & Creative Tools         | `06-generative-ai`            | 画像・動画生成、漫画・ショート動画作成ツール、IP制作向け生成AI        | 毎日 or 隔日              |
 
-## How to Request News
-
-Please use the category number:
-- "01の今日のニュース作って"
-- "04 Hardwareの2026-05-16分を作成"
-- "06を更新して"
+## Request Examples
+- 「01の今日のニュース作って」
+- 「04 Hardwareの2026-05-16分を作成」
+- 「06を更新して」
 
 ## Folder Structure
-
 ```
 ai-news-from-x/
 ├── index.html
 ├── GUIDE/CATEGORY_GUIDE.md
-├── categories/
-│   ├── 01-ai/
-│   ├── 02-chinese-ai/
-│   ├── 03-ai-agents/
-│   ├── 04-hardware-physical-tech/
-│   ├── 05-longevity/
-│   └── 06-generative-ai/
-└── ...
+└── categories/
+    ├── 01-ai/
+    ├── 02-chinese-ai/
+    ├── 03-ai-agents/
+    ├── 04-hardware-physical-tech/
+    ├── 05-longevity/
+    └── 06-generative-ai/
 ```
 
-## Output Rules
-- Create daily digests in `categories/XX-xxx/digests/YYYY-MM-DD.html`
-- Use Tailwind CSS via CDN for modern design
-- Keep consistent styling with the hub page
-- Include the category number in titles
+## Output Guidelines
+- 各ダイジェストは `categories/XX-xxx/digests/YYYY-MM-DD.html` に保存
+- Tailwind CSS CDNを使用したモダンなデザイン
+- ハブページとスタイルを統一
+- タイトルに番号を入れる
 
-## For Other AI Agents (Codex, etc.)
-
-1. Read this file first.
-2. Use the numbered category system.
-3. Match the existing HTML style.
-4. If unsure about structure, check the repository or ask to confirm current folders.
+## For Other AI Agents
+このファイルを最初に読んでから作業してください。
+番号で指定されたカテゴリを優先し、現在のハブページのスタイルに合わせてください。
 
 **Last Updated**: 2026-05-16
