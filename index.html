@@ -10,11 +10,9 @@
         body { font-family: 'Inter', system-ui, sans-serif; }
         .category-card { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
         .category-card:hover { transform: translateY(-4px); }
-        .number-badge { font-size: 0.75rem; padding: 0.1rem 0.5rem; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
-    <!-- Navbar -->
     <nav class="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-x-3">
@@ -23,12 +21,11 @@
                 </div>
                 <span class="font-bold text-2xl tracking-tight">Tech News Hub</span>
             </div>
-            <div class="text-sm text-zinc-400">Xから集めた技術ニュースの整理庫 | 番号付きカテゴリ</div>
+            <div class="text-sm text-zinc-400">Xから集めた技術ニュース | 番号付きカテゴリ</div>
         </div>
     </nav>
 
     <div class="max-w-6xl mx-auto px-6 pt-10 pb-16">
-        <!-- Hero -->
         <div class="mb-12">
             <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-3xl bg-zinc-900 text-sm mb-4 border border-zinc-800">
                 <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
@@ -38,104 +35,65 @@
             <p class="mt-3 text-xl text-zinc-400 max-w-lg">番号付きカテゴリで管理。Xの投稿から集めた技術ニュースを整理しています。</p>
         </div>
 
-        <!-- Numbered Categories -->
         <div class="mb-12">
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-semibold">カテゴリ一覧（番号付き）</h2>
-                <span class="text-sm text-zinc-500">指示時は番号を使ってください</span>
-            </div>
+            <h2 class="text-2xl font-semibold mb-6">カテゴリ一覧（番号付き）</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <!-- 01. AI -->
-                <a href="categories/ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-blue-500/50 rounded-3xl p-6">
-                    <div class="flex items-start justify-between">
-                        <div class="flex items-center gap-x-4">
-                            <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-robot"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-x-2">
-                                    <span class="number-badge bg-blue-500/20 text-blue-400 rounded-full font-mono">01</span>
-                                    <span class="font-semibold text-xl group-hover:text-blue-400 transition-colors">AI</span>
-                                </div>
-                                <div class="text-sm text-zinc-400">General / Western AI</div>
-                            </div>
+                <a href="categories/01-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-blue-500/50 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-robot"></i></div>
+                        <div>
+                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 rounded text-xs font-mono">01</span><span class="font-semibold text-xl">AI</span></div>
+                            <div class="text-sm text-zinc-400">General AI</div>
                         </div>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">OpenAI, Anthropic, Google, xAI等の最新動向・意外な活用事例</div>
+                    <div class="mt-4 text-sm text-zinc-400">一般AIモデル・ツール・アプリケーション</div>
                 </a>
 
                 <!-- 02. Chinese AI -->
-                <a href="categories/chinese-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-red-500/50 rounded-3xl p-6">
-                    <div class="flex items-start justify-between">
-                        <div class="flex items-center gap-x-4">
-                            <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-globe"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-x-2">
-                                    <span class="number-badge bg-red-500/20 text-red-400 rounded-full font-mono">02</span>
-                                    <span class="font-semibold text-xl group-hover:text-red-400 transition-colors">Chinese AI</span>
-                                </div>
-                                <div class="text-sm text-zinc-400">中国系AI</div>
-                            </div>
+                <a href="categories/02-chinese-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-red-500/50 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-globe"></i></div>
+                        <div>
+                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs font-mono">02</span><span class="font-semibold text-xl">Chinese AI & Tech</span></div>
+                            <div class="text-sm text-zinc-400">中国系AI + 関連技術</div>
                         </div>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">DeepSeek, Qwen, Alibaba, Moonshot等の動向</div>
+                    <div class="mt-4 text-sm text-zinc-400">中国系AIと関連技術</div>
                 </a>
 
                 <!-- 03. AI Agents -->
-                <a href="categories/ai-agents/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 rounded-3xl p-6">
-                    <div class="flex items-start justify-between">
-                        <div class="flex items-center gap-x-4">
-                            <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-robot"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-x-2">
-                                    <span class="number-badge bg-purple-500/20 text-purple-400 rounded-full font-mono">03</span>
-                                    <span class="font-semibold text-xl group-hover:text-purple-400 transition-colors">AI Agents</span>
-                                </div>
-                                <div class="text-sm text-zinc-400">自律型・エージェント系</div>
-                            </div>
+                <a href="categories/03-ai-agents/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-robot"></i></div>
+                        <div>
+                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 rounded text-xs font-mono">03</span><span class="font-semibold text-xl">AI Agents</span></div>
+                            <div class="text-sm text-zinc-400">自律型・エージェント系</div>
                         </div>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">OpenClaw, HermesAgent等自律的に動くAI</div>
+                    <div class="mt-4 text-sm text-zinc-400">自律型AIエージェントと自動化</div>
                 </a>
 
-                <!-- 04. Emerging Tech -->
-                <a href="categories/emerging-tech/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-emerald-500/50 rounded-3xl p-6">
-                    <div class="flex items-start justify-between">
-                        <div class="flex items-center gap-x-4">
-                            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-x-2">
-                                    <span class="number-badge bg-emerald-500/20 text-emerald-400 rounded-full font-mono">04</span>
-                                    <span class="font-semibold text-xl group-hover:text-emerald-400 transition-colors">Emerging Tech</span>
-                                </div>
-                                <div class="text-sm text-zinc-400">革新的新技（AI以外）</div>
-                            </div>
+                <!-- 04. Hardware & Physical Tech -->
+                <a href="categories/04-hardware-physical-tech/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-microchip"></i></div>
+                        <div>
+                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded text-xs font-mono">04</span><span class="font-semibold text-xl">Hardware & Physical Tech</span></div>
+                            <div class="text-sm text-zinc-400">ハードウェア・物理層</div>
                         </div>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">量子コンピューティング、BCI、核融合等</div>
+                    <div class="mt-4 text-sm text-zinc-400">半導体、IOWN、フォトニクス、新メモリなど</div>
                 </a>
 
                 <!-- 05. Longevity -->
                 <a href="categories/05-longevity/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-teal-500/50 rounded-3xl p-6">
-                    <div class="flex items-start justify-between">
-                        <div class="flex items-center gap-x-4">
-                            <div class="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-x-2">
-                                    <span class="number-badge bg-teal-500/20 text-teal-400 rounded-full font-mono">05</span>
-                                    <span class="font-semibold text-xl group-hover:text-teal-400 transition-colors">Longevity</span>
-                                </div>
-                                <div class="text-sm text-zinc-400">長寿・バイオテク</div>
-                            </div>
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <div>
+                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-teal-500/20 text-teal-400 rounded text-xs font-mono">05</span><span class="font-semibold text-xl">Longevity & Biotech</span></div>
+                            <div class="text-sm text-zinc-400">長寿・バイオテク</div>
                         </div>
                     </div>
                     <div class="mt-4 text-sm text-zinc-400">アンチエイジング、長寿技術、バイオテクノロジー</div>
@@ -143,100 +101,35 @@
 
                 <!-- 06. Generative AI -->
                 <a href="categories/06-generative-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-violet-500/50 rounded-3xl p-6">
-                    <div class="flex items-start justify-between">
-                        <div class="flex items-center gap-x-4">
-                            <div class="w-12 h-12 bg-violet-500/10 text-violet-400 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-magic"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-x-2">
-                                    <span class="number-badge bg-violet-500/20 text-violet-400 rounded-full font-mono">06</span>
-                                    <span class="font-semibold text-xl group-hover:text-violet-400 transition-colors">Generative AI</span>
-                                </div>
-                                <div class="text-sm text-zinc-400">生成AI・コンテンツ作成 / IP</div>
-                            </div>
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-violet-500/10 text-violet-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-magic"></i></div>
+                        <div>
+                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-violet-500/20 text-violet-400 rounded text-xs font-mono">06</span><span class="font-semibold text-xl">Generative AI & Creative Tools</span></div>
+                            <div class="text-sm text-zinc-400">生成AI・コンテンツ作成</div>
                         </div>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">画像生成、動画生成、漫画・ショート動画、IP制作支援</div>
+                    <div class="mt-4 text-sm text-zinc-400">画像・動画生成、漫画ツール、IP制作支援</div>
                 </a>
             </div>
         </div>
 
-        <!-- Update Frequency Guide -->
         <div class="mb-12">
-            <h2 class="text-2xl font-semibold mb-6">更新頻度の目安（ガイド）</h2>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-                <table class="w-full text-sm">
-                    <thead class="bg-zinc-800">
-                        <tr>
-                            <th class="px-6 py-4 text-left font-medium">No.</th>
-                            <th class="px-6 py-4 text-left font-medium">カテゴリ</th>
-                            <th class="px-6 py-4 text-left font-medium">更新頻度目安</th>
-                            <th class="px-6 py-4 text-left font-medium">理由・コメント</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-zinc-800">
-                        <tr>
-                            <td class="px-6 py-4 font-mono">01</td>
-                            <td class="px-6 py-4">AI (General)</td>
-                            <td class="px-6 py-4"><span class="text-emerald-400 font-medium">毎日</span></td>
-                            <td class="px-6 py-4 text-zinc-400">情報量が多く、新発表・バズが多い。毎日チェック推奥</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-mono">02</td>
-                            <td class="px-6 py-4">Chinese AI</td>
-                            <td class="px-6 py-4"><span class="text-emerald-400 font-medium">毎日 or 隔日</span></td>
-                            <td class="px-6 py-4 text-zinc-400">中国の動向も速い。重要ニュースは毎日</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-mono">03</td>
-                            <td class="px-6 py-4">AI Agents</td>
-                            <td class="px-6 py-4"><span class="text-emerald-400 font-medium">毎日 or 隔日</span></td>
-                            <td class="px-6 py-4 text-zinc-400">エージェント分野は活発。自律型の進化が速い</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-mono">04</td>
-                            <td class="px-6 py-4">Emerging Tech</td>
-                            <td class="px-6 py-4"><span class="text-amber-400 font-medium">週1〜2回 or 重大ニュース時</span></td>
-                            <td class="px-6 py-4 text-zinc-400">量子はペースが緩慢。重要ブレイクスルーのみ</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-mono">05</td>
-                            <td class="px-6 py-4">Longevity</td>
-                            <td class="px-6 py-4"><span class="text-amber-400 font-medium">週2〜3回</span></td>
-                            <td class="px-6 py-4 text-zinc-400">バイオ系は研究発表ベース。注目度が上がっているので定期確認</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-mono">06</td>
-                            <td class="px-6 py-4">Generative AI</td>
-                            <td class="px-6 py-4"><span class="text-emerald-400 font-medium">毎日 or 隔日</span></td>
-                            <td class="px-6 py-4 text-zinc-400">モデル更新が経き。ツール・ワークフローも進化中。IP制作に直接関連</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="mt-4 text-xs text-zinc-500">※ 更新頻度は目安です。重要なニュースが出たら随時対応します。指示時は「01のニュース作って」のように番号を指定してください。</p>
-        </div>
-
-        <!-- Latest Digests -->
-        <div>
-            <h2 class="text-2xl font-semibold mb-6">最新のダイジェスト</h2>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <div class="font-medium">2026-05-14 — AI News (01)</div>
-                        <div class="text-sm text-zinc-400">General AI</div>
-                    </div>
-                    <a href="categories/ai/digests/2026-05-14.html" class="px-5 py-2.5 text-sm font-medium bg-white text-zinc-950 rounded-2xl hover:bg-zinc-100 transition-colors">
-                        読む
-                    </a>
+            <h2 class="text-2xl font-semibold mb-6">更新頻度の目安</h2>
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 text-sm text-zinc-300">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                    <div><strong>01 AI</strong>: 毎日</div>
+                    <div><strong>02 Chinese AI</strong>: 毎日 or 隔日</div>
+                    <div><strong>03 AI Agents</strong>: 毎日 or 隔日</div>
+                    <div><strong>04 Hardware & Physical Tech</strong>: 週1〜2回 or 重大ニュース時</div>
+                    <div><strong>05 Longevity</strong>: 週2〜3回</div>
+                    <div><strong>06 Generative AI</strong>: 毎日 or 隔日</div>
                 </div>
             </div>
         </div>
 
-        <div class="mt-16 text-center text-xs text-zinc-500">
-            このサイトはXの公開投稿を基にGrokが定期更新しています。<br>
-            新しいカテゴリやニュースの追加依頼はいつでもどうぞ。IP制作支援も支援します！
+        <div class="text-center text-xs text-zinc-500">
+            フォルダが番号付きで統一されました。<br>
+            指示時は「01のニュース作って」のように番号を指定してください。
         </div>
     </div>
 </body>
