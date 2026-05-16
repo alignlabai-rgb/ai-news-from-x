@@ -3,137 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech News Hub | Xから集めた技術ニュース</title>
+    <title>Tech News Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .category-card { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-        .category-card:hover { transform: translateY(-4px); }
-    </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
     <nav class="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
-                <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl flex items-center justify-center">
-                    <i class="fa-solid fa-newspaper text-white"></i>
+                <div class="w-9 h-9 bg-zinc-800 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-newspaper"></i>
                 </div>
-                <span class="font-bold text-2xl tracking-tight">Tech News Hub</span>
+                <span class="font-semibold text-xl">Tech News Hub</span>
             </div>
-            <div class="text-sm text-zinc-400">Xから集めた技術ニュース | 番号付きカテゴリ</div>
+            <div class="text-sm text-zinc-400">Xから集めた技術ニュース</div>
         </div>
     </nav>
 
-    <div class="max-w-6xl mx-auto px-6 pt-10 pb-16">
-        <!-- Hero -->
-        <div class="mb-12">
-            <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-3xl bg-zinc-900 text-sm mb-4 border border-zinc-800">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                <span>定期更新中</span>
-            </div>
-            <h1 class="text-6xl font-bold tracking-tighter">X Tech News</h1>
-            <p class="mt-3 text-xl text-zinc-400 max-w-lg">番号付きカテゴリで管理。Xの投稿から集めた技術ニュースを整理しています。</p>
+    <div class="max-w-5xl mx-auto px-6 pt-10 pb-16">
+        <!-- Intro -->
+        <div class="mb-10">
+            <h1 class="text-4xl font-bold tracking-tight">X Tech News</h1>
+            <p class="mt-3 text-zinc-400">自分が毎日チェックしやすいように、Xから集めた技術ニュースを番号付きのカテゴリで整理しています。</p>
         </div>
 
         <!-- Categories -->
         <div class="mb-12">
-            <h2 class="text-2xl font-semibold mb-6">カテゴリ一覧（番号付き）</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- 01. AI -->
-                <a href="categories/01-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-blue-500/50 rounded-3xl p-6">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-robot"></i></div>
-                        <div>
-                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 rounded text-xs font-mono">01</span><span class="font-semibold text-xl">AI</span></div>
-                            <div class="text-sm text-zinc-400">General AI</div>
-                        </div>
+            <h2 class="text-lg font-semibold mb-4 text-zinc-400">カテゴリ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- 01 -->
+                <a href="categories/01-ai/index.html" class="block bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-2xl p-5 transition-colors">
+                    <div class="flex items-center gap-x-3">
+                        <span class="font-mono text-sm bg-zinc-800 px-2 py-0.5 rounded">01</span>
+                        <span class="font-semibold text-lg">AI</span>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">AIモデル・ツール・応用・ブレークスルー</div>
+                    <p class="mt-2 text-sm text-zinc-400">一般的なAIモデル・ツール・最新動向</p>
                 </a>
 
-                <!-- 02. Chinese AI & Tech -->
-                <a href="categories/02-chinese-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-red-500/50 rounded-3xl p-6">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-globe"></i></div>
-                        <div>
-                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs font-mono">02</span><span class="font-semibold text-xl">Chinese AI & Tech</span></div>
-                            <div class="text-sm text-zinc-400">中国系AI＋関連技術</div>
-                        </div>
+                <!-- 02 -->
+                <a href="categories/02-chinese-ai/index.html" class="block bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-2xl p-5 transition-colors">
+                    <div class="flex items-center gap-x-3">
+                        <span class="font-mono text-sm bg-zinc-800 px-2 py-0.5 rounded">02</span>
+                        <span class="font-semibold text-lg">Chinese AI & Tech</span>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">中国発のAIと関連ハードウェア・技術</div>
+                    <p class="mt-2 text-sm text-zinc-400">中国系AIと関連技術</p>
                 </a>
 
-                <!-- 03. AI Agents -->
-                <a href="categories/03-ai-agents/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 rounded-3xl p-6">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-robot"></i></div>
-                        <div>
-                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 rounded text-xs font-mono">03</span><span class="font-semibold text-xl">AI Agents</span></div>
-                            <div class="text-sm text-zinc-400">自律型・エージェント系</div>
-                        </div>
+                <!-- 03 -->
+                <a href="categories/03-ai-agents/index.html" class="block bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-2xl p-5 transition-colors">
+                    <div class="flex items-center gap-x-3">
+                        <span class="font-mono text-sm bg-zinc-800 px-2 py-0.5 rounded">03</span>
+                        <span class="font-semibold text-lg">AI Agents</span>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">自律型AIエージェントと自動化システム</div>
+                    <p class="mt-2 text-sm text-zinc-400">自律型エージェントと自動化</p>
                 </a>
 
-                <!-- 04. Hardware & Physical Tech -->
-                <a href="categories/04-hardware-physical-tech/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-3xl p-6">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-microchip"></i></div>
-                        <div>
-                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded text-xs font-mono">04</span><span class="font-semibold text-xl">Hardware & Physical Tech</span></div>
-                            <div class="text-sm text-zinc-400">ハードウェア・物理層</div>
-                        </div>
+                <!-- 04 -->
+                <a href="categories/04-hardware-physical-tech/index.html" class="block bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-2xl p-5 transition-colors">
+                    <div class="flex items-center gap-x-3">
+                        <span class="font-mono text-sm bg-zinc-800 px-2 py-0.5 rounded">04</span>
+                        <span class="font-semibold text-lg">Hardware & Physical Tech</span>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">半導体、新デバイス、IOWN、フォトニクス、エネルギー技術など</div>
+                    <p class="mt-2 text-sm text-zinc-400">半導体・新デバイス・IOWN・エネルギー技術など</p>
                 </a>
 
-                <!-- 05. Longevity, Biotech & Molecular Biology -->
-                <a href="categories/05-longevity/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-teal-500/50 rounded-3xl p-6">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-dna"></i></div>
-                        <div>
-                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-teal-500/20 text-teal-400 rounded text-xs font-mono">05</span><span class="font-semibold text-xl">Longevity, Biotech & Molecular Biology</span></div>
-                            <div class="text-sm text-zinc-400">長寿・バイオ・分子生物学</div>
-                        </div>
+                <!-- 05 -->
+                <a href="categories/05-longevity/index.html" class="block bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-2xl p-5 transition-colors">
+                    <div class="flex items-center gap-x-3">
+                        <span class="font-mono text-sm bg-zinc-800 px-2 py-0.5 rounded">05</span>
+                        <span class="font-semibold text-lg">Longevity & Biotech</span>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">アンチエイジング、長寿研究、分子生物学の発見</div>
+                    <p class="mt-2 text-sm text-zinc-400">アンチエイジング・長寿・分子生物学</p>
                 </a>
 
-                <!-- 06. Generative AI & Creative Tools -->
-                <a href="categories/06-generative-ai/index.html" class="category-card group block bg-zinc-900 border border-zinc-800 hover:border-violet-500/50 rounded-3xl p-6">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-12 h-12 bg-violet-500/10 text-violet-400 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-magic"></i></div>
-                        <div>
-                            <div class="flex items-center gap-x-2"><span class="px-2 py-0.5 bg-violet-500/20 text-violet-400 rounded text-xs font-mono">06</span><span class="font-semibold text-xl">Generative AI & Creative Tools</span></div>
-                            <div class="text-sm text-zinc-400">生成AI・コンテンツ作成</div>
-                        </div>
+                <!-- 06 -->
+                <a href="categories/06-generative-ai/index.html" class="block bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-2xl p-5 transition-colors">
+                    <div class="flex items-center gap-x-3">
+                        <span class="font-mono text-sm bg-zinc-800 px-2 py-0.5 rounded">06</span>
+                        <span class="font-semibold text-lg">Generative AI & Creative Tools</span>
                     </div>
-                    <div class="mt-4 text-sm text-zinc-400">画像・動画生成、漫画ツール、IP制作支援</div>
+                    <p class="mt-2 text-sm text-zinc-400">画像・動画生成、漫画ツール、IP制作支援</p>
                 </a>
+
             </div>
         </div>
 
-        <!-- Update Frequency -->
-        <div class="mb-12">
-            <h2 class="text-2xl font-semibold mb-6">更新頻度の目安（毎日更新を意識）</h2>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 text-sm">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-zinc-300">
-                    <div><strong>01 AI</strong>: 毎日</div>
-                    <div><strong>02 Chinese AI & Tech</strong>: 毎日 or 隔日</div>
-                    <div><strong>03 AI Agents</strong>: 毎日 or 隔日</div>
-                    <div><strong>04 Hardware & Physical Tech</strong>: 毎日〜週2回程度（ボリュームを広げて対応）</div>
-                    <div><strong>05 Longevity, Biotech & Molecular Biology</strong>: 週2〜3回</div>
-                    <div><strong>06 Generative AI & Creative Tools</strong>: 毎日 or 隔日</div>
-                </div>
-            </div>
-            <p class="mt-3 text-xs text-zinc-500">カテゴリを広げて、毎日更新しやすいボリュームを確保しています。</p>
-        </div>
-
-        <div class="text-center text-xs text-zinc-500">
-            フォルダとハブページを最終版に更新しました。<br>
-            指示時は「01のニュース作って」のように番号を指定してください。
+        <div class="text-xs text-zinc-500">
+            番号を指定して指示できます（例: 「01のニュース作って」）
         </div>
     </div>
 </body>
